@@ -1,0 +1,22 @@
+{
+  "name": "simplest-gql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "first": "yarn ts-node src/first.ts",
+    "second": "yarn ts-node src/second.ts",
+    "third": "yarn ts-node src/third.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.9.6",
+    "graphql": "^14.5.8",
+    "graphql-tools": "^4.0.5",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  }
+}

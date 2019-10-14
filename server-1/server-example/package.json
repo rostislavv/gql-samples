@@ -1,0 +1,22 @@
+{
+  "name": "server-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "run": "yarn ts-node src/index.ts",
+    "start": "nodemon"
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.6.5",
+    "apollo-server": "^2.9.6",
+    "date-fns": "^2.4.1",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^1.19.3",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
