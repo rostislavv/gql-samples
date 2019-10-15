@@ -5,8 +5,8 @@ export default gql`
     id: ID!
     title: String
     createdAt: DateTime
-    authorId: ID! # @deprecated(reason: "Use \`author\`.")
-    # author: Author
+    authorId: ID! @deprecated(reason: "Use \`author\`.")
+    author: Author
     votes: Int
   }
 
@@ -26,7 +26,7 @@ export default gql`
     # cursor based pagination
     postsWithCursor(pageSize: Int! = 1, after: String): PostConnectionCursor!
 
-    # authors: [Author] @rest(url: "/authors")
+    authors: [Author] @rest(url: "/authors")
   }
 
   scalar DateTime

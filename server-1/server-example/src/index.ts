@@ -7,18 +7,14 @@ import { RestDirective } from "./directives/rest";
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
-  /*
+  resolvers,
   dataSources: () => ({
     authorsAPI: new AuthorsAPI()
   }),
- */
-  /*
   schemaDirectives: {
     deprecated: DeprecatedDirective,
     rest: RestDirective
   }
- */
 });
 
 server.listen().then(({ url }) => {

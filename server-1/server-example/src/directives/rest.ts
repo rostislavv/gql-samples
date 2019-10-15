@@ -1,7 +1,7 @@
 import fetch from "node-fetch";
 import { ApolloServer, gql, SchemaDirectiveVisitor } from "apollo-server";
 
-const baseURL = "http://localhost:3000";
+const baseURL = "http://localhost:3002";
 
 export class RestDirective extends SchemaDirectiveVisitor {
   public visitFieldDefinition(field) {

@@ -14,10 +14,8 @@ export const resolvers = {
     postsWithCursor,
     postsPaginated
   },
-  /*
   Post: {
     author: postAuthor
   },
- */
   DateTime
 };
