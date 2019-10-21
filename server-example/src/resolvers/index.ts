@@ -4,7 +4,10 @@ import posts from "./posts";
 import postsWithCursor from "./postsWithCursor";
 import postsPaginated from "./postsPaginated";
 import postAuthor from "./postAuthor";
+import uploads from "./uploads";
 import { DateTime } from "../common/date-scalar";
+import { mutations } from "../mutations";
+import { subscriptions } from "../subscriptions";
 
 export const resolvers = {
   Query: {
@@ -12,10 +15,14 @@ export const resolvers = {
     postById,
     posts,
     postsWithCursor,
-    postsPaginated
+    postsPaginated,
+
+    uploads
   },
   Post: {
     author: postAuthor
   },
-  DateTime
+  DateTime,
+  ...mutations,
+  ...subscriptions
 };

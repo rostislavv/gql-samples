@@ -6,33 +6,57 @@ export default gql`
     title: String
     createdAt: DateTime
     authorId: ID! @deprecated(reason: "Use \`author\`.")
-    author: Author
+    author: Author # !
     votes: Int
   }
 
   type Query {
-    # simplest possible
     post: Post
-
-    # with argument id
     postById(id: ID!): Post
-
-    # simple list
     posts: [Post]
-
-    # simple pagination
     postsPaginated(page: Int! = 1, pageSize: Int! = 5): PostConnection
-
-    # cursor based pagination
     postsWithCursor(pageSize: Int! = 1, after: String): PostConnectionCursor!
 
     authors: [Author] @rest(url: "/authors")
+
+    uploads: [File]
+  }
+
+  input CreatePostInput {
+    id: ID!
+    title: String
+    createdAt: DateTime
+    authorId: Int
+    votes: Int
+  }
+
+  type Mutation {
+    updatePostArgs(
+      id: ID!
+      title: String
+      votes: Int
+      createdAt: DateTime
+    ): Post
+    createPostInput(input: CreatePostInput): Post
+    singleUpload(file: Upload!): File!
+  }
+  type Subscription {
+    postAdded: Post
+  }
+
+  type File {
+    filename: String!
+    mimetype: String!
+    encoding: String!
   }
 
   scalar DateTime
+  scalar Upload
 
   schema {
     query: Query # get
+    mutation: Mutation
+    subscription: Subscription
   }
 
   type PostConnectionCursor { # add this below the Query type as an additional type.
