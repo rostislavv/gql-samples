@@ -1,3 +1,4 @@
+import { ForbiddenError } from "apollo-server";
 import { performance } from "perf_hooks";
 import { posts } from "../data/posts";
 
@@ -10,15 +11,14 @@ const post = {
   someother: "info"
 };
 
-export default () => {
-  console.log(performance.now());
-  return post;
+export default (parent, args, ctx, info) => {
+  if (ctx.user.role !== "admin") throw new ForbiddenError("no permissions");
+  // console.log(performance.now());
+  // return post;
 
-  /*
   return new Promise(res => {
     setTimeout(() => {
       res(post);
     }, 1000);
   });
- */
 };

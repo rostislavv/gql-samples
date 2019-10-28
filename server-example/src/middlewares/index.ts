@@ -6,7 +6,9 @@ export const logMiddleware = async (resolve, parent, args, ctx, info) => {
   const res = await resolve();
 
   const t2 = performance.now();
-  console.log(`start: ${t1}, end: ${t2}, delta: ${t2 - t1}`);
+  console.log(
+    `${info.fieldName} - start: ${t1}, end: ${t2}, delta: ${t2 - t1}`
+  );
 
   return res;
 };

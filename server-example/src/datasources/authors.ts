@@ -8,6 +8,9 @@ export class AuthorsAPI extends RESTDataSource {
   async getAllAuthors() {
     return await this.get("authors");
   }
+  async getAuthorsByIds(ids: Array<number>) {
+    return await this.get(`authors?ids=${ids.join(",")}`);
+  }
   async getAuthorById(id) {
     return await this.get(`authors/${id}`);
   }

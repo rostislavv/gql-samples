@@ -10,8 +10,10 @@
   "dependencies": {
     "apollo-datasource-rest": "^0.6.5",
     "apollo-server": "^2.9.6",
+    "dataloader": "^1.4.0",
     "date-fns": "^2.4.1",
     "graphql-middleware": "^4.0.1",
+    "graphql-shield": "^7.0.0",
     "node-dir": "^0.1.17",
     "node-fetch": "^2.6.0",
     "nodemon": "^1.19.3",
